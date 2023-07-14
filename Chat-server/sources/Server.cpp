@@ -11,7 +11,7 @@ void Server::do_receive()
     boost::system::error_code ec;
     size_t bytes_recvd = socket_.receive_from(boost::asio::buffer(data_, MAX_MESSAGE_LENGTH), temp_sender_endpoint_, 0, ec);
     
-    if (!std::binary_search(users.begin(), users.end(), temp_sender_endpoint_))
+    if (!std::any_of(users.begin(), users.end(), [&](udp::endpoint y) { return temp_sender_endpoint_ == y; }))
     {
         users.push_back(temp_sender_endpoint_);
     }
