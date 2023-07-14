@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="sources\main.cpp" />
+    <ClCompile Include="sources\Server.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sources\Server.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
